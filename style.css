@@ -11,7 +11,7 @@ body {
 .heading {
     color: #0ef;
     text-align: center;
-    font-size: 1.5rem; /* Responsive font size */
+    font-size: 1rem; /* Responsive font size */
     text-shadow: 0 0 2vw #fff, 0 0 3vw #0ef, 0 0 4vw #0ef, 0 0 5vw pink, 0 0 6vw red, 0 0 7vw #ff00ff, 0 0 8vw #ff00ff;
 }
 
