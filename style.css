@@ -1,0 +1,27 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.heading {
+    color: #0ef;
+    text-align: center;
+    font-size: 3rem; /* Responsive font size */
+    text-shadow: 0 0 2vw #fff, 0 0 3vw #0ef, 0 0 4vw #0ef, 0 0 5vw pink, 0 0 6vw red, 0 0 7vw #ff00ff, 0 0 8vw #ff00ff;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.9); /* Use rgba for transparency */
+    padding: 2vw; /* Responsive padding */
+    position: absolute;
+    top: 2vw; /* Responsive positioning */
+    left: 0;
+    z-index: 2;
+    font-size: 2vw; /* Responsive font size */
+    color: white;
+}
