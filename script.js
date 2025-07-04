@@ -35,7 +35,7 @@
       }
       this.parentElement.appendChild(this.domElement);
       // handle window resize
-      this.oldResizeHandler = function () {};
+      this.oldResizeHandler = function () { };
       if (window.onresize !== null) {
         this.oldResizeHandler = window.onresize;
       }
@@ -59,6 +59,16 @@
         this.draw();
       }
     };
+    // force heading reflow on window resize
+    window.addEventListener("resize", function () {
+      const heading = document.querySelector(".heading");
+      if (heading) {
+        // force redraw
+        heading.style.transform = "scale(1)";
+        heading.offsetHeight; // trigger reflow
+        heading.style.transform = "";
+      }
+    });
     // Canvas resize calculations
     a.prototype.resizeHandler = function () {
       this.width = this.domElement.width = this.parentElement.offsetWidth;
@@ -217,7 +227,7 @@ $(window).resize();
 // Click to manually change image
 container.click(changePicture);
 // Info modal toggles
-document.getElementById("infoButton").addEventListener("click", function() {
+document.getElementById("infoButton").addEventListener("click", function () {
   let modal = document.getElementById("infoModal");
   modal.style.display = "block";
   setTimeout(() => modal.style.opacity = 1, 50);
@@ -230,37 +240,37 @@ function closeInfoModal() {
 }
 // Register the service worker
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
-        .then(reg => console.log('✅ Service Worker registered:', reg))
-        .catch(err => console.error('❌ Service Worker error:', err));
+  navigator.serviceWorker.register('service-worker.js')
+    .then(reg => console.log('✅ Service Worker registered:', reg))
+    .catch(err => console.error('❌ Service Worker error:', err));
 }
 // Security features with taunts
 // Funny taunt on right click
 document.addEventListener('contextmenu', function (e) {
-    e.preventDefault();
-    alert("😏 No right click! Thought you were smart, huh?");
+  e.preventDefault();
+  alert("😏 No right click! Thought you were smart, huh?");
 });
 // Funny taunt on F12 and other DevTools keys
 document.addEventListener('keydown', function (e) {
-    if (e.key === "F12" || e.keyCode === 123) {
-        e.preventDefault();
-        alert("😈 F12? Trying to act clever? Nope!");
-    }
-    if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-        e.preventDefault();
-        alert("😜 Inspect shortcut? Busted!");
-    }
-    if (e.ctrlKey && e.shiftKey && e.key === 'J') {
-        e.preventDefault();
-        alert("😂 Console peek? Dream on!");
-    }
-    if (e.ctrlKey && e.key === 'u') {
-        e.preventDefault();
-        alert("😅 View source? Not happening, buddy!");
-    }
-    if (e.ctrlKey && e.shiftKey && e.key === 'C') {
-        e.preventDefault();
-        alert("😏 Element inspector? You wish!");
-    }
+  if (e.key === "F12" || e.keyCode === 123) {
+    e.preventDefault();
+    alert("😈 F12? Trying to act clever? Nope!");
+  }
+  if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+    e.preventDefault();
+    alert("😜 Inspect shortcut? Busted!");
+  }
+  if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+    e.preventDefault();
+    alert("😂 Console peek? Dream on!");
+  }
+  if (e.ctrlKey && e.key === 'u') {
+    e.preventDefault();
+    alert("😅 View source? Not happening, buddy!");
+  }
+  if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+    e.preventDefault();
+    alert("😏 Element inspector? You wish!");
+  }
 });
 //End of Program
