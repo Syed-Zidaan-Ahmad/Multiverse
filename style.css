@@ -1,0 +1,144 @@
+/* Multiverse (CSS Part) */
+/* Import Google Font */
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
+/* Reset margins, hide overflow, and set background color */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  font-family: "Roboto Condensed", sans-serif;
+}
+/* Heading style for instructions */
+.heading {
+  position: relative;
+  z-index: 1;
+  color: #0ef;
+  text-align: center;
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  line-height: 1.4;
+  margin: 1rem auto;
+  max-width: 90%;
+  padding-right: 60px;
+}
+/* Info button in the top right corner */
+.info-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: #0ef;
+  backdrop-filter: blur(4px);
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  color: black;
+  font-size: 1.3em;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #0ef;
+}
+/* Info button position adjustments on smaller screens to avoid text overlap */
+@media (max-width: 600px) {
+  .info-btn {
+    top: 10px;
+    right: 10px;
+  }
+}
+/* Glow effect on hover */
+.info-btn:hover {
+  box-shadow: 0 0 20px #0ef;
+}
+/* Modal container for install instructions */
+.info-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px #0ef;
+  max-width: 320px;
+  max-height: 80vh;
+  overflow-y: auto;
+  display: none;
+  z-index: 10000;
+  text-align: left;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+/* Modal heading style */
+.info-modal h3 {
+  color: #ffb6c1;
+  text-align: center;
+}
+/* Phone and desktop instruction headings */
+.phone-heading,
+.desktop-heading {
+  color: #0ef;
+}
+/* Close button inside modal */
+.close-btn {
+  background: #ff1493;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff6ec7;
+  transition: 0.3s;
+}
+/* Close button hover effect */
+.close-btn:hover {
+  box-shadow: 0 0 20px #ff6ec7;
+}
+/* Scroll bar Designing for Traffic Light Mode */
+::-webkit-scrollbar {
+  width: 12px;
+}
+/* Scroll bar track Designing */
+::-webkit-scrollbar-track {
+  background: black;
+}
+/* Scroll bar scroller thumb */
+::-webkit-scrollbar-thumb {
+  background: #ff004f;
+  border-radius: 50%;
+}
+/* Scroll bar scroller thumb hover effect*/
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(5, 227, 5);
+  box-shadow: 0 0 5px rgb(5, 227, 5),
+    0 0 25px rgb(5, 227, 5),
+    0 0 50px rgb(5, 227, 5),
+    0 0 100px rgb(5, 227, 5),
+    0 0 200px rgb(5, 227, 5);
+}
+/* Modal-specific scroll bar with same traffic light styling */
+.info-modal::-webkit-scrollbar {
+  width: 8px;
+}
+/* Track stays black, as usual */
+.info-modal::-webkit-scrollbar-track {
+  background: black;
+}
+/* Scroll bar scroller thumb */
+.info-modal::-webkit-scrollbar-thumb {
+  background: #ff004f;
+  border-radius: 100%;
+}
+/* Scroll bar scroller thumb hover effect*/
+.info-modal::-webkit-scrollbar-thumb:hover {
+  background: rgb(5, 227, 5);
+  box-shadow: 0 0 5px rgb(5, 227, 5),
+    0 0 25px rgb(5, 227, 5),
+    0 0 50px rgb(5, 227, 5),
+    0 0 100px rgb(5, 227, 5),
+    0 0 200px rgb(5, 227, 5);
+}
+/*End of Program*/

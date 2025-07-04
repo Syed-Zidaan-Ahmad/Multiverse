@@ -1,0 +1,60 @@
+<!-- Multiverse (HTML Part) --> 
+<!-- A responsive kaleidoscope animation that changes images periodically and responds to user interactions across devices.-->
+<!-- Program by Zidaan -->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head of the webpage -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multiverse</title>
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json" />
+  <!-- Linking external stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<!-- Body of the webpage -->
+<body>
+  <!-- Heading instructions for users -->
+  <div class="heading">
+    Welcome to Multiverse !!!<br />
+    For Phones: Shake/Move/Rotate/Tilt/Tap your phone in different directions or just simply move your finger on the screen.
+    <br />
+    For PC: Move the mouse cursor on the screen to see the magic
+  </div>
+  <!-- Kaleidoscope container -->
+  <div id="container"></div>
+
+  <!-- Info button in top right -->
+  <button id="infoButton" class="info-btn">i</button>
+  <!-- Modal for installation instructions -->
+  <div id="infoModal" class="info-modal">
+    <h3>📲 How to Install it on your Device</h3>
+    <!-- Phone instructions -->
+    <p>
+      <strong class="phone-heading">For Phone:</strong><br>
+      1. Tap the ⋮ (three dots) on your browser<br>
+      2. Tap “Add to Home screen”<br>
+      3. Confirm to install
+    </p>
+    <!-- Desktop instructions -->
+    <p>
+      <strong class="desktop-heading">For Desktop:</strong><br>
+      1. Click the install icon in the address bar if visible (usually looks like a monitor with a down arrow)<br>
+      OR<br>
+      1. Click on the ⋮ (three dots) in the top right<br>
+      2. Scroll down carefully<br>
+      3. Click on (Cast/Save/Share) option and click “Install Multiverse”
+    </p>
+    <!-- Close button -->
+    <div style="text-align:center;">
+      <button onclick="closeInfoModal()" class="close-btn">Close</button>
+    </div>
+  </div>
+  <!-- Load jQuery first -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+  <!-- Linking external JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
+<!--End of Program-->
