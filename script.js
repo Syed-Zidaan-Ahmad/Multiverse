@@ -240,37 +240,42 @@ function closeInfoModal() {
 }
 // Register the service worker
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js')
-    .then(reg => console.log('✅ Service Worker registered:', reg))
-    .catch(err => console.error('❌ Service Worker error:', err));
+    navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('✅ Service Worker registered:', reg))
+        .catch(err => console.error('❌ Service Worker error:', err));
 }
 // Security features with taunts
 // Funny taunt on right click
 document.addEventListener('contextmenu', function (e) {
-  e.preventDefault();
-  alert("😏 No right click! Thought you were smart, huh?");
+    e.preventDefault();
+    alert("😏 No right click! Thought you were smart, huh?");
 });
 // Funny taunt on F12 and other DevTools keys
 document.addEventListener('keydown', function (e) {
-  if (e.key === "F12" || e.keyCode === 123) {
-    e.preventDefault();
-    alert("😈 F12? Trying to act clever? Nope!");
-  }
-  if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-    e.preventDefault();
-    alert("😜 Inspect shortcut? Busted!");
-  }
-  if (e.ctrlKey && e.shiftKey && e.key === 'J') {
-    e.preventDefault();
-    alert("😂 Console peek? Dream on!");
-  }
-  if (e.ctrlKey && e.key === 'u') {
-    e.preventDefault();
-    alert("😅 View source? Not happening, buddy!");
-  }
-  if (e.ctrlKey && e.shiftKey && e.key === 'C') {
-    e.preventDefault();
-    alert("😏 Element inspector? You wish!");
-  }
+    // F12
+    if (e.key === "F12" || e.keyCode === 123) {
+        e.preventDefault();
+        alert("😈 F12? Trying to act clever? Nope!");
+    }
+    // Ctrl+Shift+I
+    if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+        alert("😜 Inspect shortcut? Busted!");
+    }
+    // Ctrl+Shift+J
+    if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+        e.preventDefault();
+        alert("😂 Console peek? Dream on!");
+    }
+    // Ctrl+U (View Source)
+    if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+        alert("😅 View source? Not happening, buddy!");
+    }
+    // Ctrl+Shift+C
+    if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+        e.preventDefault();
+        alert("😏 Element inspector? You wish!");
+    }
 });
-//End of Program
+// End of Program
